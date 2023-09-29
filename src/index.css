@@ -1,13 +1,123 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #f2f4f6;
+  transition: background-color 0.3s ease;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  width: 400px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #34495e;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.box {
+  width: 400px;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  animation: slideUp 0.5s;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.custom-form {
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color: #48a999; /* Teal */
+  color: #ffffff;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background-color: #357f7a; /* Darker Teal */
+}
+
+.error-msg, .info-msg {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+  animation: fadeIn 1s;
+}
+
+.error-msg {
+  color: #e74c3c; /* Red */
+}
+
+.info-msg {
+  color: #8e44ad; /* Deep Purple */
+}
+
+.photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #e4e4e4;
+  margin-bottom: 15px;
+  overflow: hidden;
+  animation: rotatePhoto 1s infinite;
+}
+
+@keyframes rotatePhoto {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.photo:hover img {
+  transform: scale(1.1);
+}
+
+h3, p {
+  margin-top: 10px;
+  color: #333;
 }
